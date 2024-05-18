@@ -1,0 +1,27 @@
+#include <Servo.h> // Библиотека для работы с сервоприводом
+
+const int BUTTON = 6;
+Servo servo;
+
+void setup()
+{
+  pinMode(6, INPUT);
+  servo.attach(7);
+}
+
+void loop()
+{
+  if(digitalRead(6) == HIGH)
+  {
+    servo.write(0);
+    delay(1000);
+    servo.write(175);
+    delay(1000);
+  }
+  else {
+    servo.write(0);
+    delay(1000);
+    servo.write(0);
+    delay(1000);
+  }
+}
